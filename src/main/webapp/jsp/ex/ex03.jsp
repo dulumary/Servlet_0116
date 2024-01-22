@@ -14,11 +14,21 @@
 		// 좋아하는 과일
 		String fruit = request.getParameter("fruit");
 		
+		String animal = request.getParameter("animal");
 		
+		// String food = request.getParameter("food");
+		String[] foods = request.getParameterValues("food");
+		
+		String foodString = "";
+		for(int i = 0; i < foods.length; i++) {
+			foodString += foods[i] + " ";
+		}
 	%>
 	
 	<h3><%= nickname %></h3>
 	<h3><%= fruit %></h3>
+	<h3><%= animal %></h3>
+	<h3><%= foodString %></h3>
 
 </body>
 </html>
