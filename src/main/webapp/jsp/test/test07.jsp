@@ -28,9 +28,11 @@
 	    list.add(map);
 	    
 	    String menu = request.getParameter("menu");
+	    
+	    String option = request.getParameter("option");
 	
 	%>
-
+	
 	<div class="container">
 		<h1 class="text-center">검색 결과</h1>
 		<table class="table text-center">
@@ -44,7 +46,14 @@
 			<tbody>
 				<% for(Map<String, Object> store:list)  {
 					String storeMenu = (String)store.get("menu");
+					// 메뉴 조건
 					if(storeMenu.equals(menu)) {
+						double point = (Double)store.get("point");
+						// 가게정보를 tr로 포함시키는 조건 
+						
+						// option이 null 일때 
+						// option이 on이고, point 가 4.0 이상인경우 
+						if(option == null || (option.equals("on") && point >= 4.0)) {
 				%>
 				<tr>
 					<td><%= store.get("menu") %></td>
@@ -52,6 +61,7 @@
 					<td><%= store.get("point") %></td>
 				</tr>
 				<%
+						}
 					}
 				} %>
 			</tbody>
