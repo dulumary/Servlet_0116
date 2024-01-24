@@ -13,20 +13,14 @@
 
 	
 	<div id="wrap">
-		<header class="d-flex justify-content-center align-items-center">
-			<h1>마론달</h1>
-		</header>
-		<nav class="main-menu">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link" href="#">메뉴1</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">메뉴5</a></li>
-			</ul>
-		</nav>
-		<section class="contents bg-warning"></section>
-		<footer class="bg-primary"></footer>
+		<jsp:include page="header.jsp" />
+		<jsp:include page="menu.jsp" />
+		
+		<section class="contents">
+			<img class="w-100" alt="치타" src="https://cdn.pixabay.com/photo/2023/09/09/09/03/cheetah-8242729_1280.png">
+			<h3>치타 사진</h3>
+		</section>
+		<jsp:include page="footer.jsp" />
 	</div>
 	
 
